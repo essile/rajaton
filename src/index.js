@@ -6,13 +6,17 @@ import history from './history';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import NavigationBar from './containers/NavigationBar';
 
 ReactDOM.render(
-    <Router history={history}>
-        <Switch>
-            <Route exact path='/' component={App} />
-        </Switch>
-    </Router>,
+    <div>
+        <NavigationBar />
+        <Router history={history}>
+            <Switch>
+                <Route exact path='/' component={App} />
+            </Switch>
+        </Router>
+    </div>,
     document.getElementById('root'));
 
 serviceWorker.unregister();
