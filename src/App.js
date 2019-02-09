@@ -1,36 +1,29 @@
 import React, { Component } from 'react';
-import './App.css';
+import Axios from 'axios';
 
 const API_ADDRESS = 'http://localhost:5000';
 
-class App extends Component {
+export default class App extends Component {
   state = {
     testData: ''
   };
 
   componentDidMount() {
 
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.test }))
-      .catch(err => console.log(err));
+    Axios.get(API_ADDRESS + '/api/hello')
+      .then(response => {
+        this.setState({ testData: response.data.test });
+      })
+      .catch(error => {
+        alert('backend is not answering. ' + error)
+      })
   }
-  callBackendAPI = async () => {
-    const response = await fetch(API_ADDRESS + '/api/hello');
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
 
   render() {
     return (
       <div>
-        moi: {this.state.data}
+        moi: {this.state.testData}
       </div>
     );
   }
 }
-
-export default App;
