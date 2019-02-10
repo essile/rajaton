@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
-const API_ADDRESS = 'http://localhost:5000';
+const API_ADDRESS = 'http://localhost:1234';
 
 export default class App extends Component {
   state = {
-    testData: ''
+    stockProducts: []
   };
 
   componentDidMount() {
 
-    Axios.get(API_ADDRESS + '/api/hello')
+    Axios.get(API_ADDRESS + '/api/stock-products')
       .then(response => {
-        this.setState({ testData: response.data.test });
+        this.setState({ stockProducts: response.data });
+        console.log(this.state.stockProducts);
       })
       .catch(error => {
-        alert('backend is not answering. ' + error)
+        alert(error)
       })
   }
 
   render() {
     return (
       <div>
-        moi: {this.state.testData}
+        {this.state.stockProducts.map((product, index) => {
+          return <div key={index}>{product.name.toLowerCase()}, {product.category.toLowerCase()}</div>
+        })}
       </div>
     );
   }

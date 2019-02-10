@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+
+    .textItemBar {    
+        margin-left: 50%;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .navlinkItem {
+        display: table-cell;
+        text-align: center;
+    }
+}
