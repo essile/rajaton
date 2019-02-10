@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap';
+
+import styles from '../styles/NavigationBar.module.css';
 
 const NAVBAR_ITEMS = ['home', 'shop', 'about', 'contact'];
 
@@ -11,16 +13,14 @@ export default class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar id="main-navbar" collapseOnSelect expand="md">
+            <Navbar style={{ position: 'absolute', zIndex: 1, marginTop: '1.5em' }} expand="md">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
+                    <Nav className={styles.textItemBar} >
                         {this.state.navbarItems.map((item, index) => {
-                            return <Nav.Link key={index} href="">{item.toUpperCase()}</Nav.Link>
+                            return <a key={index} className={styles.navlinkItem} href="">{item.toUpperCase()}</a>
                         })}
-                        {/* <Nav.Link href="#features">{navbarItems[0]}</Nav.Link> */}
-                        {/* <Nav.Link href="#pricing">{navbarItems[1]}</Nav.Link> */}
-                        {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
+                        <a className={styles.navlinkItem} href=""><span>🛒</span></a>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
