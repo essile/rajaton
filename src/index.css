@@ -1,0 +1,13 @@
+body {
+    font-family: 'Hind', sans-serif;
+    color: #223240;
+}
+
+a {
+    color: #223240;
+}
+
+a:hover {
+    color: #667c8e;
+    text-decoration: none;
+}

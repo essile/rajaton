@@ -4,16 +4,15 @@ import { Router, Switch, Route } from 'react-router-dom';
 import history from './history';
 
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import NavigationBar from './containers/NavigationBar';
+import LandingPage from './views/LandingPage';
 
 ReactDOM.render(
     <div>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
         <Router history={history}>
             <Switch>
-                <Route exact path='/' component={App} />
+                <Route exact path='/' component={LandingPage} />
             </Switch>
         </Router>
     </div>,
