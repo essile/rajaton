@@ -11,3 +11,13 @@ a:hover {
     color: #667c8e;
     text-decoration: none;
 }
+
+/* Navigation bar settings */
+.navbar-light .navbar-toggler {
+    border-color: transparent;
+}
+.navbar-light .navbar-toggler:active, .navbar-light .navbar-toggler:focus {
+    color: transparent;
+    background-color: transparent;
+    outline: 0;
+}
