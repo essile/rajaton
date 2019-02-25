@@ -8,7 +8,7 @@ const LandingPage = (props) => {
     return (
         <div>
             <LandingPageView />
-            {/* <ShopWindow /> */}
+            <ShopWindow />
         </div>
     );
 
