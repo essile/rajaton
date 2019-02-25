@@ -13,8 +13,8 @@ export default class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar style={{ position: 'absolute', zIndex: 1, marginTop: '1.5em' }} expand="md">
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar className={styles.naviBar} style={{ zIndex: 1, paddingTop: '3em' }} expand="md">
+                <Navbar.Toggle className={styles.naviToggle} />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={styles.textItemBar} >
                         {this.state.navbarItems.map((item, index) => {

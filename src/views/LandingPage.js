@@ -1,13 +1,14 @@
 import React from 'react';
-import NavigationBar from '../containers/NavigationBar';
-import LandingPageMainImage from '../components/LandingPageMainImage';
+import LandingPageView from '../components/LandingPageView';
+import ShopWindow from '../containers/ShopWindow';
+import '../styles/LandingPage.css'
 
 const LandingPage = (props) => {
 
     return (
         <div>
-            <NavigationBar />
-            <LandingPageMainImage />
+            <LandingPageView />
+            {/* <ShopWindow /> */}
         </div>
     );
 

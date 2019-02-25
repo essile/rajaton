@@ -12,3 +12,26 @@
         text-align: center;
     }
 }
+
+@media (max-width: 767px) {
+
+    .textItemBar {
+        width: 100%;
+    }
+    .navlinkItem {
+        padding-bottom: 0.5%;
+        margin-top: 2.5%;
+        margin-right: 5%;
+    }
+    .naviToggle {
+        margin-left: 87%;
+        margin-bottom: 2%;
+        padding: 0%;
+        border-color: transparent;
+    }
+    .naviBar {
+        width: 100%;
+        text-align: right;
+        float: left;
+    }
+}
