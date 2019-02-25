@@ -1,12 +1,14 @@
 import React from 'react';
-import NavigationBar from '../containers/NavigationBar';
+import LandingPageView from '../components/LandingPageView';
+import ShopWindow from '../containers/ShopWindow';
 import '../styles/LandingPage.css'
 
 const LandingPage = (props) => {
 
     return (
-        <div className='landingPage'>
-            <NavigationBar />
+        <div>
+            <LandingPageView />
+            {/* <ShopWindow /> */}
         </div>
     );
 

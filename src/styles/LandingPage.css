@@ -4,5 +4,35 @@
         background-image: url("../assets/sumu_maisema_mainos_tuunattu_W.png");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 25% 50%;
+        background-position: 29% 50%;
+}
+
+.landingPageImage {
+        z-index: 0;
+        height: 12em;
+        margin: auto;
+        margin-top: 2em;
+        display: block;
+}
+
+@media (max-width: 767px) {
+
+        .landingPageImage {
+                height: 10em;
+                position: absolute;
+                margin-top: 2em;
+                margin-left: 25%;
+                /* float: right; */
+        }
+}
+
+@media (max-width: 400px) {
+
+        .landingPageImage {
+                height: 10em;
+                position: absolute;
+                margin-top: 2em;
+                margin-left: 20%;
+                /* float: right; */
+        }
 }
