@@ -1,0 +1,22 @@
+.shopWindow {
+    width: 100%;
+    margin: 0;
+}
+
+.productIconSmall {
+    height: auto;
+    width: 100%;
+}
+
+.centeredImage {
+    text-align: center;
+    line-height: 133%;
+}
+
+.productNameText {
+    font-size: 1.5em;
+}
+
+.categoryText {
+    font-size: 1em;
+}
