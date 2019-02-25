@@ -1,13 +1,12 @@
 import React from 'react';
 import NavigationBar from '../containers/NavigationBar';
-import LandingPageMainImage from '../components/LandingPageMainImage';
+import '../styles/LandingPage.css'
 
 const LandingPage = (props) => {
 
     return (
-        <div>
+        <div className='landingPage'>
             <NavigationBar />
-            <LandingPageMainImage />
         </div>
     );
 

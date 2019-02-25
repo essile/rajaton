@@ -1,0 +1,8 @@
+.landingPage {
+        /* width: 100vh; */
+        min-height: 100vh;
+        background-image: url("../assets/sumu_maisema_mainos_tuunattu_W.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 25% 50%;
+}
