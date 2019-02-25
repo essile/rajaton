@@ -10,7 +10,6 @@ const LandingPageView = (props) => {
             <NavigationBar />
             <img
                 className='landingPageImage'
-                // style={{ zIndex: 0, height: '225px', margin: 'auto', marginTop: '2em', display: 'block' }}
                 src={thumbnail_rajaton_logo_harmaa}
                 alt='rajaton-foggy-landscape'
             />
