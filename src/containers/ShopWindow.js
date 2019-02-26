@@ -24,7 +24,7 @@ class ShopWindow extends Component {
 
     render() {
         return (
-            <Row className='shopWindow'>
+            <Row className='shopWindow' id='shop-window'>
                 {this.state.stockProducts.map((product, index) => {
                     return <Col md={6} lg={4} key={index} style={{ padding: 0 }}>
                         <div className='centeredImage'>

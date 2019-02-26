@@ -14,13 +14,39 @@
         display: block;
 }
 
-@media (max-width: 767px) {
+.shopNowButton {
+        color: white;
+        background-color: transparent;
+        border: transparent;
+        margin-top: 40vh;
+        font-size: 1.1em;
+}
+
+.shopNowButton:hover {
+        color: #c16c1d;
+}
+
+.shopNowButton:focus {
+        outline: 0;
+}
+
+.shopNowButton:active {
+        text-shadow: 0 0 3px #325772;
+}
+
+@media (max-width: 768px) {
 
         .landingPageImage {
                 height: 10em;
                 position: absolute;
                 margin-top: 2em;
                 margin-left: 25%;
+        }
+
+        .shopNowButton {
+                margin-top: 79vh;
+                position: absolute;
+                margin-left: -7%;
         }
 }
 
@@ -31,5 +57,11 @@
                 position: absolute;
                 margin-top: 2em;
                 margin-left: 20%;
+        }
+
+        .shopNowButton {
+                margin-top: 82vh;
+                position: absolute;
+                margin-left: -65%;
         }
 }
