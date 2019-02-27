@@ -4,7 +4,8 @@ import { Row, Col } from 'react-bootstrap';
 import '../styles/ShopWindow.css'
 
 const API_ADDRESS = 'http://localhost:1234';
-const BUTTON_TEXT = 'Add to cart';
+const BUTTON_TEXT_ADD = 'Add to cart';
+const BUTTON_TEXT_ADDED = 'Added to cart';
 const formatter = new Intl.NumberFormat('fi-EN', {
     style: 'currency',
     currency: 'EUR',
@@ -15,17 +16,46 @@ class ShopWindow extends Component {
 
     state = {
         stockProducts: [],
+        buttonTexts: []
     };
 
     componentDidMount() {
         Axios.get(API_ADDRESS + '/api/shop-window-products')
             .then(response => {
-                this.setState({ stockProducts: response.data });
+                const buttonTexts = [];
+                for (let i = 0; i < response.data.length; i++) {
+                    buttonTexts[i] = BUTTON_TEXT_ADD;
+                }
+                this.setState({ stockProducts: response.data, buttonTexts });
                 console.log(this.state.stockProducts);
             })
             .catch(error => {
                 alert(error)
             })
+    }
+
+    handleClick = (product, index) => {
+        if (this.state.buttonTexts[index] === BUTTON_TEXT_ADD) {
+            this.addToCart(product);
+            let copyOfButtonTexts = { ...this.state.buttonTexts };
+            copyOfButtonTexts[index] = BUTTON_TEXT_ADDED;
+            this.setState({ buttonTexts: copyOfButtonTexts });
+        } else {
+            this.removeFromCart(product);
+            let copyOfButtonTexts = { ...this.state.buttonTexts };
+            copyOfButtonTexts[index] = BUTTON_TEXT_ADD;
+            this.setState({ buttonTexts: copyOfButtonTexts });
+        }
+    }
+
+    addToCart = (product) => {
+        console.log('adding to cart', product);
+        // request to backend
+    }
+
+    removeFromCart = (product) => {
+        console.log('removing from cart', product);
+        // request to backend
     }
 
     render() {
@@ -36,6 +66,7 @@ class ShopWindow extends Component {
                         <div className='centeredImage'>
                             <img
                                 className='productIconSmall'
+                                alt={`${product.name} ${product.category}`}
                                 src={window.location.origin + '/' + product.image_url}
                             />
                         </div>
@@ -55,8 +86,9 @@ class ShopWindow extends Component {
                             <button
                                 className='addToCartButton'
                                 id={`button${index}`}
+                                onClick={() => this.handleClick(product, index)}
                             >
-                                {BUTTON_TEXT.toUpperCase()}
+                                {this.state.buttonTexts[index].toUpperCase()}
                             </button>
                         </div>
                     </Col>
