@@ -2,6 +2,7 @@
     width: 100%;
     margin: 0;
     margin-top: -5em;
+    margin-bottom: 6em;
 }
 
 .shopWindowNewArrivals {
@@ -25,6 +26,31 @@
 
 .categoryText {
     font-size: 1em;
+}
+
+.productPrice {
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 0.5em;
+}
+
+.addToCartButton {
+    margin-top: 1em;
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 0.6em 3em 0.3em 3em;
+    font-size: 0.6em;
+    font-weight: bolder;
+}
+.addToCartButton:hover {
+    outline: 0;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.2), 0 3px 3px 1px rgba(0,0,0,0.19);
+}
+.addToCartButton:focus {
+    outline: 0;
+}
+.addToCartButton:active {
+    background-color: lightgrey;
 }
 
 .newArrivalsImage {
@@ -68,7 +94,6 @@
 .greyButton:focus {
     outline: 0.5px solid grey;
 }
-
 .greyButton:active {
     outline: 0;
 }

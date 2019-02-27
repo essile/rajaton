@@ -4,11 +4,17 @@ import { Row, Col } from 'react-bootstrap';
 import '../styles/ShopWindow.css'
 
 const API_ADDRESS = 'http://localhost:1234';
+const BUTTON_TEXT = 'Add to cart';
+const formatter = new Intl.NumberFormat('fi-EN', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 2
+})
 
 class ShopWindow extends Component {
 
     state = {
-        stockProducts: []
+        stockProducts: [],
     };
 
     componentDidMount() {
@@ -41,6 +47,17 @@ class ShopWindow extends Component {
                             <span className='categoryText'>
                                 {product.category.toLowerCase()}
                             </span>
+                        </div>
+                        <div className='productPrice'>
+                            {formatter.format(product.price)}
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <button
+                                className='addToCartButton'
+                                id={`button${index}`}
+                            >
+                                {BUTTON_TEXT.toUpperCase()}
+                            </button>
                         </div>
                     </Col>
                 })}
