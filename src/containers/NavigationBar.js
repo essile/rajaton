@@ -18,9 +18,9 @@ export default class NavigationBar extends Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={styles.textItemBar} >
                         {this.state.navbarItems.map((item, index) => {
-                            return <a key={index} className={styles.navlinkItem} href="">{item.toUpperCase()}</a>
+                            return <a key={index} className={styles.navlinkItem} href={item}>{item.toUpperCase()}</a>
                         })}
-                        <a className={styles.navlinkItem} href=""><span>🛒</span></a>
+                        <a className={styles.navlinkItem} href='shopping-cart'><span>🛒</span></a>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
