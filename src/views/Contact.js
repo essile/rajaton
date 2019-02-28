@@ -1,13 +1,14 @@
 import React from 'react';
 import '../styles/LandingPage.css'
 import NavigationBar from '../containers/NavigationBar';
+import ContactForm from '../containers/ContactForm';
 
 const LandingPage = (props) => {
 
     return (
         <div>
             <NavigationBar />
-            Sorry, the page is still in progress...
+            <ContactForm />
         </div>
     );
 
