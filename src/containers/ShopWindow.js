@@ -20,7 +20,9 @@ class ShopWindow extends Component {
     };
 
     componentDidMount() {
-        Axios.get(API_ADDRESS + '/api/shop-window-products')
+        Axios.get('https://affectionate-minsky-27b653.netlify.com/.netlify/functions/products')
+        // Axios.get(API_ADDRESS + '/api/shop-window-products')
+        // Axios.get('http://localhost:9000/products')
             .then(response => {
                 const buttonTexts = [];
                 for (let i = 0; i < response.data.length; i++) {
