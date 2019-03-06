@@ -3,7 +3,6 @@ import Axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import '../styles/ShopWindow.css'
 
-const API_ADDRESS = 'http://localhost:1234';
 const BUTTON_TEXT_ADD = 'Add to cart';
 const BUTTON_TEXT_ADDED = 'Added to cart';
 const formatter = new Intl.NumberFormat('fi-EN', {
@@ -20,8 +19,7 @@ class ShopWindow extends Component {
     };
 
     componentDidMount() {
-        // Axios.get('https://affectionate-minsky-27b653.netlify.com/.netlify/functions/products')
-        Axios.get(API_ADDRESS + '/api/shop-window-products')
+        Axios.get('https://affectionate-minsky-27b653.netlify.com/.netlify/functions/products')
             .then(response => {
                 const buttonTexts = [];
                 for (let i = 0; i < response.data.length; i++) {
