@@ -9,7 +9,7 @@
 }
 
 .rajatonForm > div > input, .rajatonForm > div > textarea {
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
     border-radius: 0;
 }
 
@@ -19,6 +19,10 @@
 }
 
 @media (max-width: 768px) {
+
+    .contactRow {
+        margin-top: 0em;
+    }
 
     .rajatonForm {
         padding-left: 1em;
