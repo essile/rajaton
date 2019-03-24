@@ -1,11 +1,7 @@
 body {
     font-family: 'Hind', sans-serif;
-    color: #223240;
+    color: #14212A;
     font-size: 1.2em;
-}
-
-body > #root > div {
-    height: 100vh;
 }
 
 a {
@@ -13,7 +9,6 @@ a {
 }
 
 a:hover {
-    /* color: #667c8e; */
     color: #c16c1d;
     text-decoration: none;
 }

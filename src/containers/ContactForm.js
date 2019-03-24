@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Row, Form, Container, Col } from 'react-bootstrap';
 import Axios from 'axios';
 import '../styles/FormStyles.css';
+import '../styles/ShopWindow.css';
 
 const API_ADDRESS = 'http://localhost:1234';
+const CONTACT_TEXT = 'We would be happy to hear from you! Please contact us trough this form and we\'ll get back to you as soon as possible.'
 
 class ContactForm extends Component {
 
@@ -35,25 +37,35 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <Container>
-                <Form onSubmit={this.sendEmail} className='rajatonForm'>
-                    <Form.Group controlId="formName">
-                        <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formEmail">
-                        <Form.Control type="email" placeholder="Email" value={this.state.formEmail} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formSubject">
-                        <Form.Control type="text" placeholder="Subject" value={this.state.formSubject} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formMessage">
-                        <Form.Control as="textarea" rows="5" placeholder="Message" value={this.state.formMessage} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Send
-                </Button>
-                </Form>
-            </Container>
+            <Row className='contactRow'>
+                <Col xs={{ span: 12, order: 3 }} md={{ span: 2, order: 1 }} />
+                <Col xs={{ span: 12, order: 2 }} md={{ span: 4, order: 1 }}>
+                    <Form onSubmit={this.sendEmail} className='rajatonForm'>
+                        <Form.Group controlId="formName">
+                            <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formEmail">
+                            <Form.Control type="email" placeholder="Email" value={this.state.formEmail} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formSubject">
+                            <Form.Control type="text" placeholder="Subject" value={this.state.formSubject} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formMessage">
+                            <Form.Control as="textarea" rows="5" placeholder="Message" value={this.state.formMessage} onChange={this.handleChange} />
+                        </Form.Group>
+                        <button className="greyButton" type="submit">
+                            Send
+                    </button>
+                    </Form>
+                </Col>
+                <Col xs={{ span: 12, order: 1 }} md={{ span: 4, order: 2 }} className='contactText'>
+                    <Container>
+                        <h2>CONTACT</h2>
+                        <p>{CONTACT_TEXT}</p>
+                    </Container>
+                </Col>
+                <Col xs={{ span: 12, order: 4 }} md={{ span: 2, order: 4 }} />
+            </Row >
         );
     }
 }

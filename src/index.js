@@ -12,7 +12,7 @@ import Contact from './views/Contact';
 import ShoppingCart from './views/ShoppingCart';
 
 ReactDOM.render(
-    <div>
+    <>
         <Router history={history}>
             <Switch>
                 <Route path='/home' component={LandingPage} />
@@ -23,7 +23,7 @@ ReactDOM.render(
                 <Route exact path='/' component={LandingPage} />
             </Switch>
         </Router>
-    </div>,
+    </>,
     document.getElementById('root'));
 
 serviceWorker.unregister();
