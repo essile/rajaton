@@ -4,6 +4,9 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import '../styles/LandingPage.css';
 import thumbnail_rajaton_logo_harmaa from '../assets/thumbnail_rajaton_logo_harmaa.png';
 
+const NAVBAR_WIDTH = '100%';
+const NAVBAR_FLOAT = 'left';
+
 const SmoothScroll = () => (
     <div style={{ textAlign: "center" }}>
         <AnchorLink href='#shop-window'>
@@ -21,7 +24,7 @@ const LandingPageView = (props) => {
 
     return (
         <div className='landingPage'>
-            <NavigationBar />
+            <NavigationBar width={NAVBAR_WIDTH} float={NAVBAR_FLOAT} />
             <img
                 className='landingPageImage'
                 src={thumbnail_rajaton_logo_harmaa}

@@ -30,8 +30,6 @@
         border-color: transparent;
     }
     .naviBar {
-        width: 100%;
         text-align: right;
-        float: left;
     }
 }
