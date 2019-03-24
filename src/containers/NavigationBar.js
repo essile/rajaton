@@ -13,7 +13,7 @@ export default class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar className={styles.naviBar} style={{ zIndex: 1, paddingTop: '3em' }} expand="md">
+            <Navbar className={styles.naviBar} style={{ zIndex: 1, paddingTop: '3em', float: this.props.float, width: this.props.width }} expand="md">
                 <Navbar.Toggle className={styles.naviToggle} />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className={styles.textItemBar} >
