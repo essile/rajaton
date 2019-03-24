@@ -38,8 +38,8 @@ class ContactForm extends Component {
     render() {
         return (
             <Row className='contactRow'>
-                <Col md='2' style={{ height: '0px' }}></Col>
-                <Col sm='6' md='4'>
+                <Col xs={{ span: 12, order: 3 }} md={{ span: 2, order: 1 }} />
+                <Col xs={{ span: 12, order: 2 }} md={{ span: 4, order: 1 }}>
                     <Form onSubmit={this.sendEmail} className='rajatonForm'>
                         <Form.Group controlId="formName">
                             <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
@@ -58,14 +58,14 @@ class ContactForm extends Component {
                     </button>
                     </Form>
                 </Col>
-                <Col sm='6' md='4' className='contactText'>
+                <Col xs={{ span: 12, order: 1 }} md={{ span: 4, order: 2 }} className='contactText'>
                     <Container>
                         <h2>CONTACT</h2>
                         <p>{CONTACT_TEXT}</p>
                     </Container>
                 </Col>
-                <Col md='2'></Col>
-            </Row>
+                <Col xs={{ span: 12, order: 4 }} md={{ span: 2, order: 4 }} />
+            </Row >
         );
     }
 }
