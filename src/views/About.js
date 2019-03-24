@@ -5,10 +5,10 @@ import '../styles/LandingPage.css'
 const LandingPage = (props) => {
 
     return (
-        <div>
+        <>
             <NavigationBar />
             Sorry, the page is still in progress...
-        </div>
+        </>
     );
 
 }

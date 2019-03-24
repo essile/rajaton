@@ -6,14 +6,13 @@ import '../styles/LandingPage.css'
 const LandingPage = (props) => {
 
     return (
-        <div>
+        <>
             <NavigationBar />
             <br/>
             <br/>
             <br/>
             <ShopWindow />
-            Sorry, the page is still in progress...
-        </div>
+        </>
     );
 
 }
