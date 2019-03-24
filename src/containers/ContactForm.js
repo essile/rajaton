@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Row, Form, Container, Col } from 'react-bootstrap';
 import Axios from 'axios';
 import '../styles/FormStyles.css';
+import '../styles/ShopWindow.css';
 
 const API_ADDRESS = 'http://localhost:1234';
 
@@ -35,25 +36,35 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <Container>
-                <Form onSubmit={this.sendEmail} className='rajatonForm'>
-                    <Form.Group controlId="formName">
-                        <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formEmail">
-                        <Form.Control type="email" placeholder="Email" value={this.state.formEmail} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formSubject">
-                        <Form.Control type="text" placeholder="Subject" value={this.state.formSubject} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formMessage">
-                        <Form.Control as="textarea" rows="5" placeholder="Message" value={this.state.formMessage} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Send
-                </Button>
-                </Form>
-            </Container>
+            <Row className='contactRow'>
+                <Col md='2' style={{ height: '0px' }}></Col>
+                <Col sm='6' md='4'>
+                    <Form onSubmit={this.sendEmail} className='rajatonForm'>
+                        <Form.Group controlId="formName">
+                            <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formEmail">
+                            <Form.Control type="email" placeholder="Email" value={this.state.formEmail} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formSubject">
+                            <Form.Control type="text" placeholder="Subject" value={this.state.formSubject} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group controlId="formMessage">
+                            <Form.Control as="textarea" rows="5" placeholder="Message" value={this.state.formMessage} onChange={this.handleChange} />
+                        </Form.Group>
+                        <button className="greyButton" type="submit">
+                            Send
+                    </button>
+                    </Form>
+                </Col>
+                <Col sm='6' md='4' className='contactText'>
+                    <Container>
+                        <h2>CONTACT</h2>
+                        <p>We would be happy to hear from you! Please contact us trough this form and we'll get back to you as soon as possible.</p>
+                    </Container>
+                </Col>
+                <Col md='2'></Col>
+            </Row>
         );
     }
 }
