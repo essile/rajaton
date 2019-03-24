@@ -5,6 +5,7 @@ import '../styles/FormStyles.css';
 import '../styles/ShopWindow.css';
 
 const API_ADDRESS = 'http://localhost:1234';
+const CONTACT_TEXT = 'We would be happy to hear from you! Please contact us trough this form and we\'ll get back to you as soon as possible.'
 
 class ContactForm extends Component {
 
@@ -60,7 +61,7 @@ class ContactForm extends Component {
                 <Col sm='6' md='4' className='contactText'>
                     <Container>
                         <h2>CONTACT</h2>
-                        <p>We would be happy to hear from you! Please contact us trough this form and we'll get back to you as soon as possible.</p>
+                        <p>{CONTACT_TEXT}</p>
                     </Container>
                 </Col>
                 <Col md='2'></Col>
