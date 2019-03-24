@@ -7,11 +7,11 @@ import NewArrivals from '../components/NewArrivals';
 const LandingPage = (props) => {
 
     return (
-        <div>
+        <>
             <LandingPageView />
             <NewArrivals />
             <ShopWindow />
-        </div>
+        </>
     );
 
 }

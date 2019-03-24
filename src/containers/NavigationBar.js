@@ -20,10 +20,10 @@ export default class NavigationBar extends Component {
                         {this.state.navbarItems.map((item, index) => {
                             return <a key={index} className={styles.navlinkItem} href={item}>{item.toUpperCase()}</a>
                         })}
-                        <a className={styles.navlinkItem} href='shopping-cart'><span>🛒</span></a>
+                        <a className={styles.navlinkItem} href='shopping-cart'><span role="img" aria-label="shopping cart">🛒</span></a>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>
+            </Navbar >
         );
     }
 }
