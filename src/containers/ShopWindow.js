@@ -19,7 +19,7 @@ class ShopWindow extends Component {
     };
 
     componentDidMount() {
-        Axios.get('https://loving-nightingale-74d922.netlify.com/.netlify/functions/products')
+        Axios.get(`${document.location.origin}/.netlify/functions/products`)
             .then(response => {
                 const buttonTexts = [];
                 for (let i = 0; i < response.data.length; i++) {
