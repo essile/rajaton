@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const productList = require('../product/productJSON.json');
+const productList = require('../backend/product.json');
 
 const app = express();
 app.use(cors({
