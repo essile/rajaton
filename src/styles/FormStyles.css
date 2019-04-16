@@ -6,6 +6,7 @@
 
 .rajatonForm > div {
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .rajatonForm > div > input, .rajatonForm > div > textarea {
@@ -15,13 +16,13 @@
 
 .contactText {
     padding-left: 3em;
-    padding-right: 4em;
+    padding-right: 1em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
     .contactRow {
-        margin-top: 0em;
+        padding-top: 2em;
     }
 
     .rajatonForm {
@@ -30,7 +31,14 @@
     }
 
     .contactText {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contactRow {
+        margin-top: 0em;
     }
 }
