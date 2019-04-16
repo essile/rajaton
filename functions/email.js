@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-import querystring from 'querystring';
 
 const app = express();
 app.use(cors({
@@ -15,13 +14,12 @@ app.use(cors({
 exports.handler = function (event, context, callback) {
 
     if (event.httpMethod !== "POST") {
-        console.log('not allowed');
+        console.log('method not allowed');
         return { statusCode: 405, body: "Method Not Allowed" };
     }
 
     const params = JSON.parse(event.body);
-    console.log('new email', params);
-    console.log('from', params.formName);
+    console.log('new email received', params);
 
     var smtpTransport = nodemailer.createTransport({
         service: "Gmail",
@@ -33,9 +31,9 @@ exports.handler = function (event, context, callback) {
     smtpTransport.sendMail({
         from: `${params.formName} <${params.formEmail}>`,
         to: `Rajaton <rajatonproducts@gmail.com>`,
-        subject: `A message trough Rajaton webstore: ${params.formSubject}`,
-        html: `Message: ${params.formMessage}
-             Sender: ${params.formName}, ${params.formEmail}`
+        subject: `${params.formSubject}`,
+        html: `<p>${params.formMessage}</p>
+             <p>Sender: ${params.formName}, ${params.formEmail}</p>`
     }, function (error, response) {
         if (error) {
             smtpTransport.close();
