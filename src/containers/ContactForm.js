@@ -4,7 +4,6 @@ import Axios from 'axios';
 import '../styles/FormStyles.css';
 import '../styles/ShopWindow.css';
 
-const API_ADDRESS = 'http://localhost:1234';
 const CONTACT_TEXT = 'We would be happy to hear from you! Please contact us trough this form and we\'ll get back to you as soon as possible.'
 
 class ContactForm extends Component {
@@ -29,7 +28,7 @@ class ContactForm extends Component {
 
     sendEmail = (event) => {
         event.preventDefault();
-        Axios.post(API_ADDRESS + '/api/new-email', this.state.formDetails)
+        Axios.post('https://loving-nightingale-74d922.netlify.com/.netlify/functions/email', this.state.formDetails)
             .then(response => {
                 console.log(response);
             })
