@@ -19,7 +19,7 @@ exports.handler = function (event, context, callback) {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
 
-    const params = querystring.parse(event.body);
+    const params = JSON.parse(event.body);
     console.log('new email', params);
     console.log('from', params.formName);
 
