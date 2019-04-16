@@ -28,7 +28,7 @@ class ContactForm extends Component {
 
     sendEmail = (event) => {
         event.preventDefault();
-        Axios.post('https://loving-nightingale-74d922.netlify.com/.netlify/functions/email', this.state.formDetails)
+        Axios.post(`${document.location.origin}/.netlify/functions/email`, this.state.formDetails)
             .then(response => {
                 console.log(response);
             })
