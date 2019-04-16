@@ -29,11 +29,11 @@ exports.handler = function (event, context, callback) {
         }
     });
     smtpTransport.sendMail({
-        from: `${params.formName} <${params.formEmail}>`,
+        from: `"${params.formName}" <${params.formEmail}>`,
         to: `Rajaton <rajatonproducts@gmail.com>`,
         subject: `${params.formSubject}`,
         html: `<p>${params.formMessage}</p>
-             <p>Sender: ${params.formName}, ${params.formEmail}</p>`
+             <p>${params.formName}, ${params.formEmail}</p>`
     }, function (error, response) {
         if (error) {
             smtpTransport.close();
