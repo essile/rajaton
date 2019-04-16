@@ -26,6 +26,7 @@ exports.handler = function (event, context, callback) {
     console.log('new email', params);
     console.log('from', data.formName);
 
+    console.log('process.env', process.env.email, process.env.password);
     var smtpTransport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
