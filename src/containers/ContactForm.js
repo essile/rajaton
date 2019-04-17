@@ -15,6 +15,7 @@ class ContactForm extends Component {
             formEmail: '',
             formSubject: '',
             formMessage: '',
+            formSent: false
         }
     }
 
@@ -32,14 +33,19 @@ class ContactForm extends Component {
         Axios.post(`${document.location.origin}/.netlify/functions/email`, this.state.formDetails)
             .then(response => {
                 console.log(response);
+                this.setState({ formSent: true });
             })
+            .catch(error => {
+                console.log(error);
+                this.setState({ formSent: true });
+            });
     }
 
     render() {
         return (
             <Row className='contactRow'>
                 <Col xs={{ span: 12, order: 3 }} lg={{ span: 2, order: 1 }} />
-                <Col xs={{ span: 12, order: 2 }} lg={{ span: 4, order: 1 }}>
+                {!this.state.formSent && <Col xs={{ span: 12, order: 2 }} lg={{ span: 4, order: 1 }}>
                     <Form onSubmit={this.sendEmail} className='rajatonForm'>
                         <Form.Group controlId="formName">
                             <Form.Control type="text" placeholder="Name" value={this.state.formName} onChange={this.handleChange} />
@@ -57,7 +63,13 @@ class ContactForm extends Component {
                             Send
                         </button>
                     </Form>
-                </Col>
+                </Col>}
+                {this.state.formSent &&
+                    <Col xs={{ span: 12, order: 2 }} lg={{ span: 4, order: 1 }}
+                        className='thankYou'>
+                        <p>Thank you</p>
+                        <p>We will get back to you as soon as possible.</p>
+                    </Col>}
                 <Col xs={{ span: 12, order: 1 }} lg={{ span: 4, order: 2 }} className='contactText'>
                     <h2 style={{ letterSpacing: '10px', color: '#6E6E6E', fontWeight: 'lighter' }}>CONTACT</h2>
                     <div style={{ color: '#848484' }}>

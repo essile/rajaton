@@ -10,7 +10,7 @@ const LandingPage = (props) => {
 
     return (
         <>
-            <NavigationBar />
+            <NavigationBar brandVisible={true}/>
             <ContactForm />
         </>
     );
