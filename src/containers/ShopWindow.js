@@ -61,7 +61,7 @@ class ShopWindow extends Component {
         return (
             <Row className='shopWindow' id='shop-window'>
                 {this.state.stockProducts.map((product, index) => {
-                    return <Col md={6} lg={4} key={index} style={{ padding: 0 }}>
+                    return <Col md={6} lg={4} key={index} style={{ padding: '2px' }}>
                         <div className='centeredImage'>
                             <img
                                 className='productIconSmall'
