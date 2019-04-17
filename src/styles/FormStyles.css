@@ -19,6 +19,13 @@
     padding-right: 1em;
 }
 
+.thankYou {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
 @media (max-width: 992px) {
 
     .contactRow {
@@ -34,11 +41,16 @@
         padding-left: 2em;
         padding-right: 2em;
     }
+
+    .thankYou {
+        margin-top: 2.5em;
+    }
 }
 
 @media (max-width: 768px) {
 
     .contactRow {
-        margin-top: 0em;
+        margin-top: 1em;
+        margin-bottom: 2em;
     }
 }
