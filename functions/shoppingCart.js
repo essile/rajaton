@@ -17,8 +17,15 @@ exports.handler = function (event, context, callback) {
         if (event.httpMethod === "POST") {
 
             const params = JSON.parse(event.body);
-            console.log('post received', params);
-            const newShoppingCart = addToCart(params.item);
+            console.log('post received. item', params.item);
+            
+            try {
+                const newShoppingCart = addToCart(params.item);
+            } 
+            catch(error) {
+                console.log(error);
+            }
+            
             console.log('returning', newShoppingCart);
 
             return {
