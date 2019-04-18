@@ -7,7 +7,7 @@ exports.handler = function (event, context, callback) {
         if (event.httpMethod === "GET") {
             const cartItems = getCartItems();
             console.log('get received, answer', cartItems);
-            
+
             return {
                 statusCode: 200,
                 body: cartItems
@@ -18,6 +18,13 @@ exports.handler = function (event, context, callback) {
 
             const params = JSON.parse(event.body);
             console.log('post received', params);
+            const newShoppingCart = addToCart()
+            console.log('returning', newShoppingCart);
+
+            return {
+                statusCode: 200,
+                body: newShoppingCart
+            };
         }
     }
 
