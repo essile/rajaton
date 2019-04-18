@@ -24,6 +24,7 @@
 
 .shopNowButton:hover {
         color: #c16c1d;
+        stroke: #c16c1d;
 }
 
 .shopNowButton:focus {
@@ -32,6 +33,13 @@
 
 .shopNowButton:active {
         text-shadow: 0 0 3px #325772;
+}
+
+.svg {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 4;
+        stroke-linecap: butt;
 }
 
 @media (max-width: 768px) {
