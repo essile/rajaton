@@ -1,12 +1,12 @@
 const shoppingCart = { test: 'hello' }
 
-export function addToCart(product, count) {
+export function addToCart(product) {
     
     if (shoppingCart.lenght === 0) {
         shoppingCart = [];
     }
 
-    shoppingCart[product] = count;
+    shoppingCart[product.name] = product.count;
 
     return shoppingCart;
 }
